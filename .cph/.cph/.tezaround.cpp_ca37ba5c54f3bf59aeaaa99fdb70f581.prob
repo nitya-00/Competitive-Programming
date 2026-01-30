@@ -1,0 +1,1 @@
+{"name":"Local: tezaround","url":"c:\\Users\\divya\\Desktop\\codeforces\\.cph\\tezaround.cpp","tests":[{"id":1743864955642,"input":"4\n2\n3\n4\n5\n","output":"-1\n3 2 1\n-1\n1 5 2 3 4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"c:\\Users\\divya\\Desktop\\codeforces\\.cph\\tezaround.cpp","group":"local","local":true}
