@@ -4,19 +4,19 @@ using namespace std;
 void solve() {
     int n, m, l, r;
     cin >> n >> m >> l >> r;
-    int l_prime = 0;
-    int r_prime = 0;
+    int l_e = 0;
+    int r_e = 0;
     if(m<=r) {
-        l_prime=0;
-        r_prime=m;
+        l_e=0;
+        r_e=m;
     }
     else{
-        l_prime=r-m;
-        r_prime=r;
+        l_e=r-m;
+        r_e=r;
     }
     
 
-    cout << l_prime << " " << r_prime << "\n";
+    cout << l_e << " " << r_e << "\n";
 }
 
 int main() {
