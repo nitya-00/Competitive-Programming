@@ -21,12 +21,16 @@ void solve() {
     int mn = *min_element(a.begin(), a.end());
 
     int count = 0;
-    for(int i = 0; i < n; i++) {
-        if(a[i] == mn)
-            count++;
+    for(int i = 1; i < a.size(); i++) {
+       if(a[i]>a[i-1]) {
+           a.erase(a.begin() + i);
+           i--;
+       }
+       // a.erase(remove(a.begin(), a.end(), mn), a.end());
+        //count++;
     }
 
-    cout << count << "\n";
+    cout << a.size() << "\n";
 }
 
 int main() {

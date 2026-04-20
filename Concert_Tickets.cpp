@@ -1,37 +1,30 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <set>
 using namespace std;
-void solve(){
-    int n  ,m;
-    cin>>n>>m;
-    vector<long long>tickets(n);
-    vector<long long>price(m);
-    for(int i=0;i<n;i++)cin>>tickets[i];
-    for(int j=0;j<m;j++)cin>>price[j];
-    int i=0;
-    int j=0;
-    long long count=0;
-    vector<long long>res(n , -1);
-    sort(tickets.begin() , tickets.end());
-    sort(price.begin() , price.end());
-    while(i < n && j < m ){
-        if(tickets[i]>=price[j]){
-           res[i]=price[j];
 
-            j++;
-        }
-        else if(price[j]>tickets[i]){
-            i++;
-        }
-           
+int main(){
+    int n, m;
+    cin >> n >> m;
+
+    multiset<int> tickets;
+
+    for(int i = 0; i < n; i++){
+        int x; cin >> x;
+        tickets.insert(x);
     }
-    for(int i=0;i<m;i++){
-        cout<<res[i]<<endl;
-        
+
+    for(int i = 0; i < m; i++){
+        int x; cin >> x;
+
+        auto it = tickets.upper_bound(x);
+
+        if(it == tickets.begin()){
+            cout << -1 << endl;
+        } else {
+            --it;                  // largest ≤ x
+            cout << *it << endl;
+            tickets.erase(it);     // remove ticket
+        }
     }
-}
-
-
-int main() {
-    solve();
-   
 }

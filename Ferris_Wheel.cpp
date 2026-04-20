@@ -1,28 +1,32 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
+
 int solve(){
-   int n;
-   long long x;
-    cin>>n>>x;
-    vector<long long>a(n);
-    long long sum=0;
-    for(int i=0;i<n;i++){
-        cin>>a[i];
-        sum+=a[i];
-    }
-    long long count=0;
-    for(int i=0;i<n;i++){
-        if(a[i]<=x/3){
-            count++;
+    int n;
+    long long x;
+    cin >> n >> x;
+
+    vector<long long> a(n);
+    for(int i = 0; i < n; i++) cin >> a[i];
+
+    sort(a.begin(), a.end());
+
+    int i = 0, j = n - 1;
+    int cnt = 0;
+
+    while(i <= j){
+        if(a[i] + a[j] <= x){
+            i++;   // pair lightest with heaviest
         }
+        j--;       // heaviest always goes
+        cnt++;
     }
 
-    long long res=(sum+x-1)/x;
-    return res + count;
+    return cnt;
 }
 
-
-int main() {
-    cout <<solve() << endl;
-   
+int main(){
+    cout << solve() << endl;
 }
