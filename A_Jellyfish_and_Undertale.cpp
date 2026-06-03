@@ -1,6 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
-int solve(){
+long long solve(){
     long long a, b;
     int n;
     cin>>a >>b>>n;
@@ -9,12 +10,14 @@ int solve(){
 		cin>>x[i];
 	}
     long long maxi=b;
-
+    long long sum=0;
+    long long ans=b;
     for( int i = 0; i < n ; i ++){
-		maxi += min(a - 1, x[i]);
-	}
+        ans += min(a - 1, x[i]);
+    }
+   
      
-    return maxi;
+    return ans;
 }
 
 
