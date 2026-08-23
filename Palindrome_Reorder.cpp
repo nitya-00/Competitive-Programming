@@ -1,7 +1,10 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
 using namespace std;
 bool isPalindrome(string s){
-    if(s.reverse()==s){
+    string reversed = s;
+    reverse(reversed.begin(), reversed.end());
+    if(reversed == s){
         return true;
     }
     else return false;
